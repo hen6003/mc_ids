@@ -7,7 +7,6 @@ root.title("Minecraft Ids")
 root.minsize(305, 125)
 root.maxsize(305, 125)
 root.configure(bg='#131d27')
-ver = "0.1" # version
 root.option_add('*font', ('comforta', 20, 'bold'))
 
 user_input_tk = StringVar() 
