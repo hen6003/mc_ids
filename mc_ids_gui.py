@@ -11,16 +11,17 @@ root.option_add('*font', ('comforta', 20, 'bold'))
 
 user_input_tk = StringVar() 
 output_tk = StringVar()
-
+ids_json = requests.get('https://raw.githubusercontent.com/Arcensoth/mcdata/master/processed/reports/registries/item/item.json')
 
 def search():
-    r = requests.get('https://raw.githubusercontent.com/Arcensoth/mcdata/master/processed/reports/registries/item/item.json')
     ids_array = []
 
-    for i in r.json()['values']:
+    for i in ids_json.json()['values']:
         ids_array.append(i[10:])
 
     user_input = user_input_tk.get()
+
+    print("Input: " + user_input)
 
     user_input = user_input.lower()
     user_input = user_input.strip()
@@ -30,6 +31,14 @@ def search():
 
     for i in ids_array:
         if i == user_input:
+            output = "Id: " + i
+            found = True
+        
+        elif i == user_input + "s":
+            output = "Id: " + i
+            found = True
+
+        elif i == user_input.partition('_')[0]:
             output = "Id: " + i
             found = True
 
