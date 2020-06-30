@@ -4,8 +4,9 @@ from tkinter import *
 
 root = Tk()
 root.title("Minecraft Ids")
-root.minsize(310, 140)
-root.maxsize(310, 140)
+root.minsize(305, 125)
+root.maxsize(305, 125)
+root.configure(bg='#131d27')
 ver = "0.1" # version
 root.option_add('*font', ('comforta', 20, 'bold'))
 
@@ -39,9 +40,9 @@ def search():
     print(output)
     output_label.configure(text = output)
 
-input = Entry(root, text = user_input_tk).grid(row = 0,column = 0)
-output_label = Label(root, text = "", compound = CENTER, relief = GROOVE, width = 20, bg = "grey")
+input = Entry(root, text = user_input_tk, justify = CENTER, bg = "#243a52", fg = "#131d27", highlightbackground = "#243a52", highlightcolor = "#243a52", relief = FLAT).grid(row = 0,column = 0)
+output_label = Label(root, text = "Id: air", compound = CENTER, relief = FLAT, width = 20, bg = "#243a52", fg = "#131d27")
 output_label.grid(row = 2,column = 0)
-search_button = Button(root, text = "Search", width = 19, compound = CENTER, relief = FLAT, command = search).grid(row = 1,column = 0)
+search_button = Button(root, text = "Search", width = 20, padx = 0, pady = 0, compound = CENTER, bg = "#243a52", fg = "#131d27", highlightcolor = "#243a52", highlightbackground = "#243a52", activebackground = "#131d27", activeforeground = "#243a52",bd = 0, relief = FLAT, command = search).grid(row = 1,column = 0)
 
 root.mainloop()
